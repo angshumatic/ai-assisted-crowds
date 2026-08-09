@@ -1,4 +1,4 @@
-# Run this script from the folder containing the three Qualtrics CSV files.
+# Run this script from the repository root.
 # It creates the main analysis objects and writes the paper figures as PDFs.
 
 suppressPackageStartupMessages({
@@ -17,10 +17,13 @@ n_tasks <- 200
 min_duration <- 180
 
 treatment_files <- c(
-  baseline = "qualtricsdata_baseline.csv",
-  tr_worse = "qualtricsdata_tr_worse.csv",
-  tr_better = "qualtricsdata_tr_better.csv"
+  baseline = "data/qualtricsdata_baseline.csv",
+  tr_worse = "data/qualtricsdata_tr_worse.csv",
+  tr_better = "data/qualtricsdata_tr_better.csv"
 )
+
+figures_dir <- "figures_msom"
+dir.create(figures_dir, showWarnings = FALSE, recursive = TRUE)
 
 treatment_levels <- c("tr_worse", "baseline", "tr_better")
 treatment_labels <- c(
@@ -570,11 +573,11 @@ scatterplot <- make_scatterplot(tasks_all, segments)
 gamma_hist <- make_gamma_hist(tasks_all, desc_stats)
 kappa_hist <- make_kappa_hist(tasks_all, desc_stats)
 
-ggsave("figures_msom/gamma_contourplot.pdf", gamma_contourplot, width = 4.5, height = 4.5, device = cairo_pdf)
-ggsave("figures_msom/benefit_contourplot.pdf", benefit_contourplot, width = 4.5, height = 4.5, device = cairo_pdf)
-ggsave("figures_msom/scatterplot.pdf", scatterplot, width = 4.5, height = 4.5, device = cairo_pdf)
-ggsave("figures_msom/gamma_hist.pdf", gamma_hist, width = 4.5, height = 2.25, device = cairo_pdf)
-ggsave("figures_msom/kappa_hist.pdf", kappa_hist, width = 4.5, height = 2.25, device = cairo_pdf)
+ggsave(file.path(figures_dir, "gamma_contourplot.pdf"), gamma_contourplot, width = 4.5, height = 4.5, device = cairo_pdf)
+ggsave(file.path(figures_dir, "benefit_contourplot.pdf"), benefit_contourplot, width = 4.5, height = 4.5, device = cairo_pdf)
+ggsave(file.path(figures_dir, "scatterplot.pdf"), scatterplot, width = 4.5, height = 4.5, device = cairo_pdf)
+ggsave(file.path(figures_dir, "gamma_hist.pdf"), gamma_hist, width = 4.5, height = 2.25, device = cairo_pdf)
+ggsave(file.path(figures_dir, "kappa_hist.pdf"), kappa_hist, width = 4.5, height = 2.25, device = cairo_pdf)
 
 main_paper_results <- list(
   responses_all = responses_all,
