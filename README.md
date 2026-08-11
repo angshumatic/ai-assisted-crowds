@@ -44,3 +44,5 @@ It also creates the manuscript figures:
 - `scatterplot.pdf` (Figure 4a)
 - `kappa_hist.pdf` (Figure 4b)
 - `gamma_hist.pdf` (Figure 4c)
+
+Cite as: Pal, Angshuman, Asa B. Palley, Ville A. Satopää. Enhancing Crowd Accuracy in AI-Assisted Judgmental Forecasting: Theory and Experimental Evidence. Available at SSRN 6045634.
