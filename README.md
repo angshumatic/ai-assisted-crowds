@@ -7,18 +7,18 @@ reproduce the main manuscript analyses and figures for:
 
 ## Repository Structure
 
-- `code_msom.R`: main analysis script
+- `main.R`: main analysis script
 - `data/`: cleaned experimental data
 - `preregistration/`: preregistrations, postmortems, and postmortem scripts
-- `figures_msom/`: generated manuscript figures; ignored by Git
+- `figures/`: generated manuscript figures; ignored by Git
 - `AI Advice Generation.pdf`: study material
 
 ## Required Files
 
-Run `code_msom.R` from the repository root. The script expects the following
+Run `main.R` from the repository root. The script expects the following
 files:
 
-- `code_msom.R`
+- `main.R`
 - `data/qualtricsdata_baseline.csv`
 - `data/qualtricsdata_tr_worse.csv`
 - `data/qualtricsdata_tr_better.csv`

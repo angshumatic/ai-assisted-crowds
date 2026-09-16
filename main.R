@@ -22,7 +22,7 @@ treatment_files <- c(
   tr_better = "data/qualtricsdata_tr_better.csv"
 )
 
-figures_dir <- "figures_msom"
+figures_dir <- "figures"
 dir.create(figures_dir, showWarnings = FALSE, recursive = TRUE)
 
 treatment_levels <- c("tr_worse", "baseline", "tr_better")
